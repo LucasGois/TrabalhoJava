@@ -3,8 +3,6 @@ package app.gui;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -16,7 +14,7 @@ import javax.swing.border.EmptyBorder;
 
 import app.dao.UsuarioBD;
 import app.exception.SistemaException;
-import app.gui.menu.Menu;
+import app.gui.menu.MenuView;
 
 public class Login extends JFrame {
 
@@ -27,6 +25,8 @@ public class Login extends JFrame {
 	public Login() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 300, 200);
+		setLocationRelativeTo(null);
+
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -83,7 +83,7 @@ public class Login extends JFrame {
 			new UsuarioBD().logar(txtLogin.getText(), txtSenha.getText());
 
 			dispose();
-			new Menu().setVisible(true);
+			new MenuView().setVisible(true);
 
 		} catch (SistemaException e) {
 			JOptionPane.showMessageDialog(null, e.getMessage());
