@@ -16,7 +16,7 @@ A rota a ser chamada é **/otimiza/<n_entregadores>**
 
 É esperado no corpo da requisição uma *string* formatada em JSON, como a seguir:
 
-```json
+```python
 [
    {
       "cep":"89504790",
@@ -62,7 +62,7 @@ Desta string JSON, será utilizado para cálculo de proximidade apenas o **cep**
 
 Como resposta, será retornado uma string JSON como a seguinte. No exemplo abaixo, temos os mesmos campos passados na requisição com mais uma chave chamada de "Motoboy", com o ID (numeração) respectivo ao Motoboy. 
 
-```json
+```java
 [
     {
         "cep": "89504790",
